@@ -1,0 +1,30 @@
+./autogen.sh   will look for autogen.input
+
+autogen.input are flags used in generating Makefile configure.ac
+
+You can get all of the flags by running
+
+./configure --help > configure.help.log
+
+
+This is only to be used if you start LibreOffice from scratch
+
+1.	>/opt/lo/bin/make clean
+	>./autogen.sh
+	>/opt/lo/bin/make
+
+
+--with-visual-studio=2010  Makefile is 2010 friendly.
+--with-package-format=archive     end of make, an archive file is created
+				  it is buggy.
+
+--disable-cve-tests		  prevent test during build
+				  build will take four hours, anyway.
+--with-external-tar=		  Makefile will direct downloaded
+				  tar files to this directory.
+
+
+PLEASE NOTE
+AFTER YOU RUN MAKE for the first time, ADD TO AUTOGEN.INPUT 
+--disable-fetch-external	This prevents tar files from being 
+				downloaded again.

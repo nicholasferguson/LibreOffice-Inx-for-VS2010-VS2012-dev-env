@@ -1,0 +1,2 @@
+setup-x86.exe -P autoconf -P automake -P bison -P cabextract -P doxygen -P flex -P gcc-g++ -P git -P gnupg -P gperf -P libxml2-devel -P libpng12-devel -P make -P mintty -P openssh -P openssl -P patch -P perl -P pkg-config -P doxygen -P python -P readline -P rsync -P unzip -P vim -P wget -P zip -P svn -P ruby -P cvs  -P python3 -P libicu-devel -P curl
+				

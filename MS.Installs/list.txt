@@ -1,0 +1,53 @@
+Please note.  After every install, its best to restart machine
+This installation process is here, for a fresh machine.  (new)
+
+One problem with an existing installation is that NET or SDK installed after a Visual Studio...somewhere a config is not properly set.
+Did not resolve this issue.
+
+I recommend you download ISO's.  Installation will be much faster.
+
+(1) Install NET Frameworks	ISO name
+NET.Framework.450.Full		dotNetFx40_Full_x86_x64.exe
+NET.Framework.451		NDP451-KB2858728-x86-x64-AllOS-ENU.exe
+NET.Framework.452		NDP452-KB2901907-x86-x64-AllOS-ENU.exe
+
+(2) Install Window SDK's
+
+WinSDK.7  ( which iso get useds, depends on CPU type: Intel, AMD..)
+				GRMSDKX_EN_DVD.iso
+				GRMSDKIAI_EN_DVD.iso
+				GRMSDK_EN_DVD.iso
+
+WinSDK.8.0			sdksetup.exe
+	
+				Choose to download to install on remote machine
+				This will download entire installation to your machine
+				Then you install from local HD.
+
+			
+WinSDK 8,1			sdksetup.exe
+	
+				Choose to download to install on remote machine
+				This will download entire installation to your machine
+				Then you install from local HD.
+
+MS Build			BuildTools_Full.exe
+				From codeplex get
+					MSBuild Extension Pack Nov 2011
+					Install all
+
+
+(3) Install Visual Studio
+
+2010				X16-42555VS2010ProTrial1.iso
+				VS2010SP1dvd1.iso  ( SP 1)
+
+
+2012				VS2012_PRO_enu.iso
+				VS2012.4.iso  ( Update 4)				
+
+(4) Install DirectX SDK		DXSDK_Feb10.exe
+
+	
+
+			 
