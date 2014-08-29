@@ -100,7 +100,11 @@ Step 3:
 	>/opt/lo/bin/make
 		Make will take about four hours.
 
-	Start up cygwin and go to /opt/lo/bin and do chmod+x on the make.exe
+	if process complains that it lacks a source.ver 
+	Add file under Special_config_filesToReview
+	Edit.  If you are building from core, without a version, then =master
+
+	
 Step 3X
 
 	If autogen.sh or make complains that a cygwin lib or whatever is missing.
