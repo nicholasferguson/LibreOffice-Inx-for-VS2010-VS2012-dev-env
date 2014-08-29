@@ -3,11 +3,11 @@ This is basically for colleagues at an office.
 
 
 LibreOffice_cygwin_VS2012_vs2010
-Buiid was on a fresh, new machine.  There were issues with MSBuild on a machine that had
-several dev environments on it.  Reinstalling NET, SDK and Visual Studio takes hours and my 
+Build was on a fresh, new machine.  There were issues with MSBuild on a machine that had
+several dev environments already installed on it.  A strategy of correcting those issues by reinstalling NET, SDK and Visual Studio takes hours and my 
 sequence didn't work.  I was also using Windows 8.   I also had issues with Norton
-AntiVirus which would put files from this build into quarantine...not because of them being a virus,
-but a thread.
+AntiVirus which would quarantine files from this build ... without flagging them as a virus,
+but a threat...?
 
 
 
@@ -19,8 +19,9 @@ Created dir c:\cygwin64
 	README
 	get the setup-x86_64.exe from cygwin.org
 	run it by using start.setup.bat
-	I recommend getting cygwin and run it twice.
-		1. Download without installing.
+		this bat is configured to download needed packages from cygwin as to build libreoffice.
+	I recommend running cygwin setup  twice.
+		1. Download to a local directory
 			1.1.  Choose a local directory in c:/cygwin64...like 
 							  c:/cygwin64/install
 		2. Also if you have bandwidth, choose a site like
@@ -31,18 +32,20 @@ Created dir c:\cygwin64
 
 	Then start up cygwin64 and at prompt type in
 	>cpan -i Archive::Zip
-	for some reason it's missing.
+	for some reason this perl utility is missing.
 
 	Install ant in c:/cygwin64/opt/apache-ant-1.9.2
 	Install junit in c:/cygwin6/opt/junit/share/java/junit-4.4.jar & junit-4.1.1.jar
 
 	Create dir for /opt/lo/bin  ( a 64 bit make will be installed here )
+		Put the make.exe here.  then at prompt >chmod +x make.exe
 
 	Add this line to your home directory .bash_profile ( this is the only edit to default .bashrc and .bash_profile
 		PATH=/opt/lo/bin:$PATH
 	After an initial startup of cygwin64...a .bash_profile will be automatically created for you, in your home directory.
 
-/Do a git from 
+/Do a git from gerrit.libreoffice.org
+	ex:  git clone git://gerrit.libreoffice.org/core
 	untar via cygwin
 	do mv <name of untarred file> master  and put here: /opt/lo/master
 
@@ -56,16 +59,17 @@ Created dir c:\cygwin64
 
 /Instructions
 Step 1:
-	do cygwin64 as explained above.
+	install cygwin64 as explained above.
 
-Step 2:  INstall MS packages.  There is a file in MS.Installs with iso names.
+Step 2:  Install MS packages.  There is a file in MS.Installs with iso names.
 
 	For all of these packages, its recommended you first downloaded their iso files.
 	Just in case, you need to reinstall.  Also downloading iso file then installing is
 	faster then installing these packages onto your machine's directories, via web.
 
 	Install NET 3.0,4.0, 4.2 ( not 4.5 is only needed to do builds with VS2013)
-		First complete this build, with  2010
+		First complete this build, with  2010, then try 2012.  LibreOffice is still working on releasing a 2013 build.
+		As far as I can tell, builds are good only for Windows 7 Pro. 
 
 	Install MSBuild v 12
 	Install Framework SDKs 7.1 8.0 8.1 ( note 8.2 is for VS2013)
