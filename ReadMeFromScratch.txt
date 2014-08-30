@@ -152,6 +152,17 @@ STEP C - become familiar with two files
 	VERY IMPORTANT==> Replace a downloaded cygwin64/home/lo/master/autogen.input with this github's 
 	autogen.input.
 	
+	Also copy over config_host.mk from this github's autogen.input
+	it will have
+	export ANT=C:/cygwin64/opt/apache-ant-1.9.2/bin/ant
+	export ANT_HOME=C:/cygwin64/opt/apache-ant-1.9.2
+	export ANT_LIB=C:/cygwin64/opt/apache-ant-1.9.2/lib
+	
+	When you run autogen.sh on Step E-3x2... autogen.sh runs configure.ac and many 
+	of the entries in config_host.mk should be updated by your env.  But I find that config_host.mk
+	isn't thoroughly updated.
+	
+	
 	Do this replacement via cygwin64.  If you copy, paste via Microsoft Explore, cygwin64 might 
 	find that file corrupted.... 	You will then need to find a dos2unix.exe utility....  
 	I added that utility to this github... if you use it, you 
@@ -250,7 +261,23 @@ Step 3X3  If autogen has complaints
 	Then repeat this process, but install from local directory. (again choose keep, and search for item 
 	that needs to be installed)
 
-Step 4 Once completed Ok.  Then run make
+Step 3X4.  Audit your /home/lo/master/config_host.mk
+
+	At this stage, all of the directories listed in config_host.mk should be local to your machine.
+	If not, then perhaps config_host.mk did not update properly.
+	Review especially this entry:
+	export PATH=  
+	you can always add additional paths to that, via vi or vim.  
+	
+	If you see a path in config_host.mk such as 
+	export DOCDIR=/usr/local/share/doc/libreoffice
+	
+	I just went ahead and created it.  I did not research it.
+	Though at end of build... I did not find any documents in that subdirectory.
+	
+	
+	
+Step 4 Once autogen.sh is completed Ok. And config_host.mk has been audited, then run make
 	
 
 	>/opt/lo/bin/make
