@@ -1,37 +1,48 @@
-This set of instructions originated during August 2014, using LibreOffice master.  That is a dev environment.
+This set of instructions originated during August 2014, using LibreOffice master.  
+That is a dev environment.
 I presume these instructions should apply to any LibreOffice version released as of Aug 2014
 
-This just a kick off set of instructions.  It's expected to work.  Then you can improve as you see fit.
-This is basically for colleagues at an office.
+This just a kick off set of instructions.  It's expected to work.  
+Then you can improve as you see fit.
 
 =================
 Summary:
 =================
-	LibreOffice is a build using Microsoft's MSBuild, with scripts via cygwin64
-	This build uses Boost, and other third party librairies.
-	This build will initially download from a LibreOffice site, tars of all 3rd Party tools, such as boost.
-	This build will then build even boost libs/dlls as required.
+	+ LibreOffice is a build using Microsoft's MSBuild, with scripts run via cygwin64
+	+ This build uses Boost, and other third party librairies.
+	+ This build will initially download from a LibreOffice site, tars of 
+	  all 3rd Party tools, such as boost.
+	+ This build will then build even boost libs/dlls as required.
 
-	Different versions of LibreOffice, have their unique set of identities in their third party tar file-names, such as boost.
-	This promises that, during a 'make' when that 'make' process downloads third-party tar files from a LibreOffice site, those tar files will work with that LibreOffice version.
+	+ Different versions of LibreOffice, have their unique set of identities in their third party 
+		tar file-names, such as boost.
+	+ This promises that, during a 'make' when that 'make' process downloads third-party tar files 
+		from a LibreOffice site, those tar files will work with that LibreOffice version.
 	
-	It's important that after this 'make' build process, downloads tar files, that you stop repeated downloads by adding a flag to autogen.input
+	+ It's important that after this 'make' build process, downloads tar files, that you stop 
+		repeated downloads by adding a flag to autogen.input
 
 		--disable-external-fetch
 
-	This flag will tell build process to fetch those tars from a local directory, only.  Your autogen.input file specifies a local directory:
+	+ This flag will tell build process to fetch those tars from a local directory, only.  
+		Your autogen.input file specifies a local directory:
 	
 		--with-external-tar=/vboxsvr/tml/lo/src
 		
-	Verify that all of your downloaded tar files are in there.  If not, then move them over
+	+ Verify that all of your downloaded 3rdParty tar files from LibreOffice, are in there.  
+	    If not, then move them over
 
-	Of course, depending on when you interrupt this build process, to prevent further downloads of tar files, it it gets interruped, you will have to restart this build process...
+	+ Of course, depending on when you interrupt this build process, to prevent 
+		further downloads of tar files, if 'build' gets interruped, you will have to restart 
+		this build process... 1. run autogen.sh 2. run make
 
-	During a build, build will generate tmp files that get flagged by Norton Anti-Virus as viruses or threats.
-	Norton will quarantine and delete .... build fails.
-	On this issue, in googling, there are some complaints about Norton and other anti-viruses.
+	+ During a build, build will generate tmp files to keep track of its state.
+		These tmp file get flagged by Norton Anti-Virus as viruses or threats.
+		Even some generated exe's get flagged as 'threads'
+	+ Norton will quarantine and delete .... build fails.
+	+ On this issue, in googling, there are some complaints about Norton and other anti-viruses.
 
-	So to finish a build, I had to un-install Norton.
+	+ So to finish a build, I had to un-install Norton.
 
 =================
 Special note about Excel VBA and LibreOffice Calc
@@ -46,15 +57,16 @@ Special note about Excel VBA and LibreOffice Calc
 =================		
 LibreOffice-Inx-for-VS2010-VS2012-dev-env
 =================
-Build was on a fresh, new machine.  There were issues with MSBuild on a machine that had
-several dev environments already installed on it.  A strategy of correcting those issues by reinstalling NET, SDK and Visual Studio takes hours and my 
-sequence didn't work.  I was also using Windows 8.   I also had issues with Norton
-AntiVirus which would quarantine files from this build ... without flagging them as a virus,
-but a threat...?
+Build was on a fresh, new machine.  
 
+Otherwise, there were issues with MSBuild on a machine that had
+several dev environments already installed on it.  A strategy of 
+correcting those issues  by reinstalling NET,  SDK and Visual Studio 
+took hours/days and my sequence didn't work.  I was also using Windows 8.   
+I also had issues with Norton AntiVirus which would quarantine files from this build ...
+without flagging them as a virus, but a threat...?
 
-
-So uninstall, reinstall. I finally just bought a new machine O/S Windows 7 Pro, 64 bit
+So instead of uninstall, reinstall. I bought a new machine with O/S Windows 7 Pro, 64 bit
 
 =========
 STEP A - setup cygwin64
@@ -87,9 +99,13 @@ Created dir c:\cygwin64
 	Create dir for /opt/lo/bin  ( a 64 bit make will be installed here )
 		Put the make.exe here.  then at prompt >chmod +x make.exe
 
-	Add this line to your home directory .bash_profile ( this is the only edit to default .bashrc and .bash_profile
+	Add this line to your home directory .bash_profile ( this is the only edit to default .bashrc 
+	and .bash_profile
+	
 		PATH=/opt/lo/bin:$PATH
-	After an initial startup of cygwin64...a .bash_profile will be automatically created for you, in your home directory.
+		
+	After an initial startup of cygwin64...a .bash_profile will be automatically created for you, 
+	in your home directory.
 
 =========
 STEP B - get source files
@@ -109,9 +125,12 @@ STEP C - become familiar with two files
 	autogen.input
 	config_host.mk
 
-	VERY IMPORTANT==> Replace a downloaded cygwin64/home/lo/master/autogen.input with this github's autogen.input
-	Do this replacement via cygwin64.  If you copy, past via Microsoft Explore, cygwin64 might find that file corrupted.... 
-	You will then need to find a dos2unix.exe utility....  I added that utility to this github... if you use it, you 
+	VERY IMPORTANT==> Replace a downloaded cygwin64/home/lo/master/autogen.input with this github's 
+	autogen.input.
+	
+	Do this replacement via cygwin64.  If you copy, past via Microsoft Explore, cygwin64 might 
+	find that file corrupted.... 	You will then need to find a dos2unix.exe utility....  
+	I added that utility to this github... if you use it, you 
 	will have to copy to c:\cygwin64\bin  and just to be thorough at cygwin64 prompt >chmod +x dos2unix
 
 =========
@@ -127,7 +146,8 @@ STEP D - Install Microsoft build environment
 	faster then installing these packages onto your machine's directories, via web.
 
 	Install NET 3.0,4.0, 4.2 ( not 4.5 is only needed to do builds with VS2013)
-		First complete this build, with  2010, then try 2012.  LibreOffice is still working on releasing a 2013 build.
+		First complete this build, with  2010, then try 2012.  LibreOffice is still working
+		on releasing a 2013 build.
 		As far as I can tell, builds are good only for Windows 7 Pro. 
 
 	Install MSBuild v 12
@@ -195,7 +215,8 @@ Step 3X3  If autogen has complaints
 	run start.setup.bat
 	Click on cygwin gui "keep'  That says none of your existing cygwin will be downloaded again
 	Then do a search in cygwin gui for items that are missing and download without installation.
-	Then repeat this process, but install from local directory. (again choose keep, and search for item that needs to be installed)
+	Then repeat this process, but install from local directory. (again choose keep, and search for item 
+	that needs to be installed)
 
 Step 4 Once completed Ok.  Then run make
 	
@@ -254,7 +275,8 @@ Step 7:  Generating project files for a Visual Studio 2010 or 2012
 
 	Once done, in /master you will see a LibreOffice.sln
 
-	If in autogen.input you chose VS2012, then you can go ahead and start up Visual Studio 2012 and open up that sln file.
+	If in autogen.input you chose VS2012, then you can go ahead and start up Visual Studio 2012 
+	and open up that sln file.
 
 	If you have chosen VS2010, there are two additional steps.
 
