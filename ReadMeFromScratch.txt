@@ -18,6 +18,7 @@ Summary:
 		tar file-names, such as boost.
 	+ This promises that, during a 'make' when that 'make' process downloads third-party tar files 
 		from a LibreOffice site, those tar files will work with that LibreOffice version.
+		As of Aug 2014, build process downloaded 90 3Party tar files, with total size of about 274MB
 	
 	+ It's important that after this 'make' build process, downloads tar files, that you stop 
 		repeated downloads by adding a flag to autogen.input
