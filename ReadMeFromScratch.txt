@@ -1,5 +1,28 @@
 This just a kick off set of instructions.  It's expected to work.  Then you can improve as you see fit.
-This is basically for colleagues at an office. 
+This is basically for colleagues at an office.
+
+Summary:
+	LibreOffice is a build using Microsoft's MSBuild, with scripts via cygwin64
+	This build uses Boost, and other third party librairies.
+	This build will initially download from a LibreOffice site, tars of all 3rd Party tools, such as boost.
+	This build will then build even boost libs/dlls as required.
+
+	Different versions of LibreOffice, have their unique set of identifites in the tar files for third party tools, such as boost.
+	
+	It's important that after this build process, downloads tar files, that you stop this build process and add a flag to autogen.input
+
+		--disable-external-fetch
+
+	This flag will tell build process to fetch those tars from a local directory, only.  In your autogen.input, that your build would be using is
+		--with-external-tar=/vboxsvr/tml/lo/src
+
+	That is local directory.
+		
+
+	During a build, some tmp files get flagged by Norton Anti-Virus as viruses or threats.
+	In googling, there are some complaints about Norton and other anti-viruses.
+
+	So to finish a build, I had to un-install Norton.
 
 
 LibreOffice_cygwin_VS2012_vs2010
@@ -12,6 +35,10 @@ but a threat...?
 
 
 So uninstall, reinstall. I finally just bought a new machine O/S Windows 7 Pro, 64 bit
+
+=========
+STEP A - setup cygwin64
+=========
 
 Created dir c:\cygwin64
 
@@ -44,24 +71,33 @@ Created dir c:\cygwin64
 		PATH=/opt/lo/bin:$PATH
 	After an initial startup of cygwin64...a .bash_profile will be automatically created for you, in your home directory.
 
+=========
+STEP B - get source files
+=========
+
 /Do a git from gerrit.libreoffice.org
 	ex:  git clone git://gerrit.libreoffice.org/core
-	untar via cygwin
-	do mv <name of untarred file> master  and put here: /opt/lo/master
+
+	untar via cygwin to cygwin/home/lo and rename 'libreoffice' directory to 'master'
 
 
+=========
+STEP C - become familiar with two files
+=========
 
 /Special_config_filesToReview.
 	autogen.input
 	config_host.mk
 
-/MS.Installs  ( download their iso's...otherwise install takes too long)
+	VERY IMPORANT==> Replace a downloaded /cyautogen.input with this github's autogen.input
 
-/Instructions
-Step 1:
-	install cygwin64 as explained above.
+=========
+STEP D - Install Microsoft build environment
 
-Step 2:  Install MS packages.  There is a file in MS.Installs with iso names.
+=========
+/MS.Installs  Review file in that directory.
+
+	Install MS packages.  There is a file in MS.Installs with iso names.
 
 	For all of these packages, its recommended you first downloaded their iso files.
 	Just in case, you need to reinstall.  Also downloading iso file then installing is
@@ -93,19 +129,40 @@ Step 2:  Install MS packages.  There is a file in MS.Installs with iso names.
 	Control Panel\System and Security\Windows Update
 	Install all.
 
-Step 3:
-	start up your cygwin as windows  administrator
-	cd /opt/lo/master
-	>./autogen.sh
-	>/opt/lo/bin/make
-		Make will take about four hours.
+=========
+STEP E - Start build..follow steps below...
 
-	if process complains that it lacks a source.ver 
-	Add file under Special_config_filesToReview
-	Edit.  If you are building from core, without a version, then =master
+=========
 
+		
+Step 1:
+	cygwin64 should have been installed.
+	at prompt check
+	/opt/lo/bin/make  
+
+Step 2:  review your /home/.bash_profile
+
+
+Step 3: start up your cygwin as windows  administrator
 	
-Step 3X
+
+Step 3X1 Edit cygwin64/home/lo/master/autogen.input  ( edit from cygwin64 using vi or vim )
+	VS2010 or VS2012?
+		in autogen.input set
+		--with-visual-studio=2010  OR
+		--with-visual-studio=2012
+	Otherwise, for a start..I would recommend using autogen.input as is.
+
+Step 3x2  RUN AUTOGEN.SH
+
+	cd /opt/lo/master
+
+	you might need to do
+	>chmod +x *.sh
+
+	>./autogen.sh
+
+Step 3X3  If autogen has complaints
 
 	If autogen.sh or make complains that a cygwin lib or whatever is missing.
 	run start.setup.bat
@@ -113,38 +170,87 @@ Step 3X
 	Then do a search in cygwin gui for items that are missing and download without installation.
 	Then repeat this process, but install from local directory. (again choose keep, and search for item that needs to be installed)
 
-Step 4:
+Step 4 Once completed Ok.  Then run make
+	
+
+	>/opt/lo/bin/make
+		Make will take about four hours.
+
+	if process complains that it lacks a source.ver 
+	Add file under Special_config_filesToReview
+	Edit.  If you are building from core, without a version, then =master	
+
+
+
+
+Step 5:  After a 1st run of 'make'. Successful or with failure.
+
 	Review autogen.input file
 	When you run autogen.sh, it will initially downloaded tar files from LibreOffice.
-	After it downloads, kill make.
-	Edit your autogen.input file with these notes
-	This will prevent further downloadso of these tars.
-step 5:
 
-	If there is a core, or fault.  
-	Important
-	Assuming your make downloaded all tar files.
-	Edit your autogen.input and add 
+	Edit your autogen.input file by adding:
+
 	--disable-external-fetch
-	This will prevent make from doing wget for these same files, over and over again.
-	do make clean. Then repeat
 
-	./autogen.sh
-	make
+	This will prevent further downloads of these tars.
+
+	Then redo
+
+	>./autogen.sh
+
+	and start again
+
+	>/opt/lo/bin/make 
 
 
-Step 6:
-	I recommend running make 
+
+Step 6:  How to capture make log file and view contents dynamically.
+
 	>/opt/lo/bin/make > m1.log 2>$1
 
 	Then start up a 2nd cygwin64 instance that will give a view into m1.log file with line numbers.
 	cd /home/lo/master
 	> tail -f m1.log | perl -pe '$_ = "$. $_"'
 
-Step 7:
+Step 7:  Generating project files for a Visual Studio 2010 or 2012
+
+	At this stage, you have made an initial decision via autogen.input
+		in autogen.input you set
+		--with-visual-studio=2010  OR
+		--with-visual-studio=2012	
+
+	With either choice, after you have a good build, via cygwin64>/opt/lo/bin/make 
+	Then run
+	cygwin64>/opt/lo/bin/make vs2012-ide-integration
+
+	This will generate Visual Studio project files, friendly to Visual Studio 2012.
+
+	Once done, in /master you will see a LibreOffice.sln
+
+	If in autogen.input you chose VS2012, then you can go ahead and start up Visual Studio 2012 and open up that sln file.
+
+	If you have chosen VS2010, there are two additional steps.
+
+		- open cygwin64/home/lo/master/bin/gbuild-to-ide 
+		  and set
+			platform_toolset_node.text = 'v100'
+			V100 is VS 2010
+			v110 is vs 2012
+
+		- run again /opt/lo/bin/make vs2012-ide-integration
+		- open LibreOffice.sln and change 2012 to 2010.
+			Microsoft Visual Studio Solution File, Format Version 12.00  
+			Become for Visual Studio 2010
+			Microsoft Visual Studio Solution File, Format Version 11.00
+
+		Then go ahead and start up Visual Studio 2010 and open that solution.
+
 	
 	Builds for VS2010 might complain that it cannot find header files for DirectX.
 	Look in config_host.mk and insure that path to DirecX is included here:
+
+
+	
 
 	
 
