@@ -38,7 +38,7 @@ Summary:
 
 	+ During a build, build will generate tmp files to keep track of its state.
 		These tmp file get flagged by Norton Anti-Virus as viruses or threats.
-		Even some generated exe's get flagged as 'threads'
+		Even some generated exe's get flagged as 'threats'
 	+ Norton will quarantine and delete .... build fails.
 	+ On this issue, in googling, there are some complaints about Norton and other anti-viruses.
 
