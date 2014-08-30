@@ -315,21 +315,30 @@ Step 7:  Generating project files for a Visual Studio 2010 or 2012
 			Microsoft Visual Studio Solution File, Format Version 11.00
 
 		Then go ahead and start up Visual Studio 2010 and open that solution.
+		At this stage, Visual Studio does not have to build anything.  It's all built
+		Test it, by building just one of the 338 projects.  
+		I would recommend building 	'Executable scalc'
+
 		
-Step 8:  See Calc run...  If build has been completed.
+Step 8:  See Calc run...  If 'make' build has been completed.
 
 		 Via Windows Explorer
 		 go to C:\cygwin64\home\lo\master\instdir\program
 		 Double click on scalc.exe
 		 
 Step 9:	 Debugging In Visual Studio 2012 or 2010
+		 + Important.  If 'make' build was ok, there is no need to do a re-build in Visual Studio.
+		   And I have not timed how long it would take to re-build.  
+		   Though build with 'make' runs about 4 hours ( with 3rd Party tars already downloaded )
+		   on a four core 3.7GHZ, with O/S Windows 7 Pro.
+		 
 		 In Solution Explorer, find 'Executable scalc'
 		 
-		 + Mark as 'Set as startup project'		 
+		 + Mark its project as 'Set as startup project'		 
 		 + Then in Visual Studio, select Debug/Start Debugging		 
 		 + Ignore msg that other projects are out of date.
 		 + LibreOffice starts up.
-		 + In LibreOffice.choose 'Calc Spreadsheet'
+		 + In LibreOffice, choose 'Calc Spreadsheet'
 		 + In Calc, click on File, Open
 		 + Then go to Top Menu of Visual Studio, and choose
 				Debug/Break All
