@@ -69,7 +69,6 @@ Special note about Excel VBA and LibreOffice Calc
 		Supposing that Excel VBA code interacts with Excel OO.
 	LibreOffice Calc has a different OO Model.
 		Thus, Excel VBA is not compatible with LibreOffice Calc.
-		LibreOffice Calc OO Model and Excel VBA code do not understand each other.
 	LibreOffice and its Calc works 100% with LibreOffice Basic and StarBasic.
 		
 =================		
