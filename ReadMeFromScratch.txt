@@ -114,10 +114,14 @@ STEP D - Install Microsoft build environment
 	Install VS 2010 Pro (Trial version)
 	Install VS 2010 SP 1.
 
-	For VS2010, download DirectX
-		You will need to add DirectX to the config_host.mk path. 
-		My implementations eventually required this.
-	Install DirectXSDK for a Visual Studio 2010 build.
+	For VS2010, Install DirectXSDK for a Visual Studio 2010 build.
+		You will need to add DirectX to the 
+		config_host.mk path.  Edit the PATH by adding path to DirectX SDK
+
+		export PATH=.:/cygdrive/c/Program Files (x86)/Microsoft DirectX SDK (February 2010):
+
+		After I installed DirecXSDK, an inital build required this. ( Maybe I didn't restart my machine>)
+	
 
 	install Java JDK 1.8 or a 1.7 32 bit.
 	download ant   put into /opt/ant
