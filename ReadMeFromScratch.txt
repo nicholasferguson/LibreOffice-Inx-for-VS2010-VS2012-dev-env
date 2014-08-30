@@ -295,9 +295,7 @@ Step 7:  Generating project files for a Visual Studio 2010 or 2012
 
 		Then go ahead and start up Visual Studio 2010 and open that solution.
 
-	
-	Builds for VS2010 might complain that it cannot find header files for DirectX.
-	Look in config_host.mk and insure that path to DirecX is included here:
+
 
 
 	
