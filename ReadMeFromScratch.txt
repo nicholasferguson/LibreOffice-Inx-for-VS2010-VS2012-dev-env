@@ -2,7 +2,7 @@ This set of instructions originated during August 2014, using LibreOffice master
 That is a dev environment.
 I presume these instructions should apply to any LibreOffice version released as of Aug 2014
 
-This just a kick off set of instructions.  It's expected to work.  
+This is a 'begin development' set of instructions.  It's expected to work.  
 Then you can improve as you see fit.
 
 =================
