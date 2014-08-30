@@ -313,6 +313,13 @@ Step 7:  Generating project files for a Visual Studio 2010 or 2012
 			Microsoft Visual Studio Solution File, Format Version 11.00
 
 		Then go ahead and start up Visual Studio 2010 and open that solution.
+		
+Step 8:  See Calc run...  If build has been completed.
+
+		 Via Windows Explorer
+		 go to C:\cygwin64\home\lo\master\instdir\program
+		 Double click on scalc.exe
+		
 
 
 
