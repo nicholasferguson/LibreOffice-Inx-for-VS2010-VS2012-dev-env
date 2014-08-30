@@ -110,6 +110,9 @@ STEP C - become familiar with two files
 	config_host.mk
 
 	VERY IMPORTANT==> Replace a downloaded cygwin64/home/lo/master/autogen.input with this github's autogen.input
+	Do this replacement via cygwin64.  If you copy, past via Microsoft Explore, cygwin64 might find that file corrupted.... 
+	You will then need to find a dos2unix.exe utility....  I added that utility to this github... if you use it, you 
+	will have to copy to c:\cygwin64\bin  and just to be thorough at cygwin64 prompt >chmod +x dos2unix
 
 =========
 STEP D - Install Microsoft build environment
