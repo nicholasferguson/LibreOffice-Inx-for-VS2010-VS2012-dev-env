@@ -7,9 +7,10 @@ Summary:
 	This build will initially download from a LibreOffice site, tars of all 3rd Party tools, such as boost.
 	This build will then build even boost libs/dlls as required.
 
-	Different versions of LibreOffice, have their unique set of identities in the tar files for third party tools, such as boost.
+	Different versions of LibreOffice, have their unique set of identities in their third party tar file-names, such as boost.
+	This promises that, during a 'make' when that 'make' process downloads third-party tar files from a LibreOffice site, those tar files will work with that LibreOffice version.
 	
-	It's important that after this build process, downloads tar files, that you stop this build process and add a flag to autogen.input
+	It's important that after this 'make' build process, downloads tar files, that you stop repeated downloads by adding a flag to autogen.input
 
 		--disable-external-fetch
 
