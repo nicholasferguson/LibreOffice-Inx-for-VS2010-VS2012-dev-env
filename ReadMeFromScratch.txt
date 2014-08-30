@@ -7,20 +7,22 @@ Summary:
 	This build will initially download from a LibreOffice site, tars of all 3rd Party tools, such as boost.
 	This build will then build even boost libs/dlls as required.
 
-	Different versions of LibreOffice, have their unique set of identifites in the tar files for third party tools, such as boost.
+	Different versions of LibreOffice, have their unique set of identities in the tar files for third party tools, such as boost.
 	
 	It's important that after this build process, downloads tar files, that you stop this build process and add a flag to autogen.input
 
 		--disable-external-fetch
 
-	This flag will tell build process to fetch those tars from a local directory, only.  In your autogen.input, that your build would be using is
+	This flag will tell build process to fetch those tars from a local directory, only.  Your autogen.input file specifies a local directory:
+	
 		--with-external-tar=/vboxsvr/tml/lo/src
 
-	That is local directory.
+		
+	That is local directory. Verify that all of your downloaded tar files are in there.  If not, then move them over.
 		
 
-	During a build, some tmp files get flagged by Norton Anti-Virus as viruses or threats.
-	In googling, there are some complaints about Norton and other anti-viruses.
+	During a build, build will generate tmp files that get flagged by Norton Anti-Virus as viruses or threats.
+	On this issue, in googling, there are some complaints about Norton and other anti-viruses.
 
 	So to finish a build, I had to un-install Norton.
 
