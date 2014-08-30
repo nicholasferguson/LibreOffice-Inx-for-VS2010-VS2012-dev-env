@@ -12,7 +12,10 @@ In Visual Studio,  when you open LibreOffice.sln, you will find 338 projects
 On a new machine, it should take about 4 hours to install microsoft applications and cygwin
 and do a git for libreoffice core.
 
-Note:  LibreOffice core tar file is sole tar needed at this stage.
+Note:  LibreOffice source tar file  for core is sole tar needed at this stage.
+	   If you decide to work with tar files, and word 'core' is not in its name, then it's tar file without word of 'help',
+	   'translation' or 'dictionaries'.
+	   At this stage, you can skip downloading libreoffice source tar files for 'help', 'translations' and 'dictionaries'.
 
 Then it takes another four to seven hours to do an initial build of LibreOffice.
 
