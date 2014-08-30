@@ -99,6 +99,12 @@ Created dir c:\cygwin64
 
 	Create dir for /opt/lo/bin  ( a 64 bit make will be installed here )
 		Put the make.exe here.  then at prompt >chmod +x make.exe
+		
+	Create dir vboxsvr and subdirectories for C:\cygwin64\vboxsvr\tml\lo\src
+		This directory will store LibreOffice's 90 3rd Party tar files, that will get downloaded
+		during 'build' process.
+		This directory is referenced in autogen.input
+		--with-external-tar=/vboxsvr/tml/lo/src	
 
 	Add this line to your home directory .bash_profile ( this is the only edit to default .bashrc 
 	and .bash_profile
