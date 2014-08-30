@@ -326,15 +326,15 @@ Step 9:	 Debugging In Visual Studio 2012 or 2010
 		 In Solution Explorer, find 'Executable scalc'
 		 
 		 + Mark as 'Set as startup project'		 
-		 + Then Debug/Start Debugging		 
+		 + Then in Visual Studio, select Debug/Start Debugging		 
 		 + Ignore msg that other projects are out of date.
 		 + LibreOffice starts up.
-		 + Choose 'Calc Spreadsheet"
+		 + In LibreOffice.choose 'Calc Spreadsheet'
 		 + In Calc, click on File, Open
 		 + Then go to Top Menu of Visual Studio, and choose
 				Debug/Break All
 			
-		 You can start choosing your breakpoints.
+		 You can start choosing your break points.
 		 
 		 This is state of affairs, as I know it.
 		 
