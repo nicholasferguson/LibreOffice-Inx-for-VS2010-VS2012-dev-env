@@ -1,7 +1,9 @@
 This just a kick off set of instructions.  It's expected to work.  Then you can improve as you see fit.
 This is basically for colleagues at an office.
 
+=================
 Summary:
+=================
 	LibreOffice is a build using Microsoft's MSBuild, with scripts via cygwin64
 	This build uses Boost, and other third party librairies.
 	This build will initially download from a LibreOffice site, tars of all 3rd Party tools, such as boost.
@@ -17,18 +19,30 @@ Summary:
 	This flag will tell build process to fetch those tars from a local directory, only.  Your autogen.input file specifies a local directory:
 	
 		--with-external-tar=/vboxsvr/tml/lo/src
+		
+	Verify that all of your downloaded tar files are in there.  If not, then move them over
 
-		
-	That is local directory. Verify that all of your downloaded tar files are in there.  If not, then move them over.
-		
+	Of course, depending on when you interrupt this build process, to prevent further downloads of tar files, it it gets interruped, you will have to restart this build process...
 
 	During a build, build will generate tmp files that get flagged by Norton Anti-Virus as viruses or threats.
+	Norton will quarantine and delete .... build fails.
 	On this issue, in googling, there are some complaints about Norton and other anti-viruses.
 
 	So to finish a build, I had to un-install Norton.
 
-
-LibreOffice_cygwin_VS2012_vs2010
+=================
+Special note about Excel VBA and LibreOffice Calc
+=================
+	Per googling for literature, Excel VBA code is tighthly coupled to Excel's OO Model. 
+		Supposing that Excel VBA code interacts with Excel OO.
+	LibreOffice Calc has a different OO Model.
+		Thus, Excel VBA is not compatible with LibreOffice Calc.
+		LibreOffice Calc OO Model and Excel VBA code do not understand each other.
+	LibreOffice and its Calc works 100% with LibreOffice Basic and StarBasic.
+		
+=================		
+LibreOffice-Inx-for-VS2010-VS2012-dev-env
+=================
 Build was on a fresh, new machine.  There were issues with MSBuild on a machine that had
 several dev environments already installed on it.  A strategy of correcting those issues by reinstalling NET, SDK and Visual Studio takes hours and my 
 sequence didn't work.  I was also using Windows 8.   I also had issues with Norton
