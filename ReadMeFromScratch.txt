@@ -7,6 +7,8 @@ Then you can improve as you see fit.
 
 This env will first result in project files for Visual Studio 2012, having Update #4
 There are instructions for generating project files for Visual Studio 2010, having Sp #1
+In Visual Studio,  when you open LibreOffice.sln, you will find 338 projects
+
 
 =================
 Summary:
@@ -319,6 +321,26 @@ Step 8:  See Calc run...  If build has been completed.
 		 Via Windows Explorer
 		 go to C:\cygwin64\home\lo\master\instdir\program
 		 Double click on scalc.exe
+		 
+Step 9:	 Debugging In Visual Studio 2012 or 2010
+		 In Solution Explorer, find 'Executable scalc'
+		 
+		 + Mark as 'Set as startup project'		 
+		 + Then Debug/Start Debugging		 
+		 + Ignore msg that other projects are out of date.
+		 + LibreOffice starts up.
+		 + Choose 'Calc Spreadsheet"
+		 + In Calc, click on File, Open
+		 + Then go to Top Menu of Visual Studio, and choose
+				Debug/Break All
+			
+		 You can start choosing your breakpoints.
+		 
+		 This is state of affairs, as I know it.
+		 
+		 
+		 
+		 
 		
 
 
