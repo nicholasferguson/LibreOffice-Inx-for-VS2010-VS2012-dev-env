@@ -5,6 +5,6 @@
 --with-external-tar=/vboxsvr/tml/lo/src
 --with-ant-home=/opt/apache-ant-1.9.2
 --with-junit=/opt/junit/share/java/junit-4.4.jar
---with-visual-studio=2010
+--with-visual-studio=2012
 --disable-cve-tests
 --with-package-format=archive

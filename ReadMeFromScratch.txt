@@ -213,6 +213,7 @@ Step 3X1 Edit cygwin64/home/lo/master/autogen.input  ( edit from cygwin64 using 
 		--with-visual-studio=2010  OR
 		--with-visual-studio=2012
 	Otherwise, for a start..I would recommend using autogen.input as is.
+		--with-visual-studio=2012
 
 Step 3x2  RUN AUTOGEN.SH
 
