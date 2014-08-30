@@ -156,6 +156,12 @@ STEP D - Install Microsoft build environment
 		First complete this build, with  2010, then try 2012.  LibreOffice is still working
 		on releasing a 2013 build.
 		As far as I can tell, builds are good only for Windows 7 Pro. 
+		
+	To be on a safe side, after each ISO install,  restart Windows 7 Pro.
+	and check for any updates,vis Start/Control Panel then type into <search>:  Update
+		Then choose 'Check for Updates'
+		Skip this Update step, when you install Visual Studios.
+	
 
 	Install MSBuild v 12
 	Install Framework SDKs 7.1 8.0 8.1 ( note 8.2 is for VS2013)
