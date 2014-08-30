@@ -1,4 +1,1 @@
-LibreOfficeFromScratch.inx
-==========================
-
-team to review
+Read LibreOfficeFromScratch.inx
