@@ -89,7 +89,7 @@ STEP C - become familiar with two files
 	autogen.input
 	config_host.mk
 
-	VERY IMPORANT==> Replace a downloaded /cyautogen.input with this github's autogen.input
+	VERY IMPORTANT==> Replace a downloaded cygwin64/home/lo/master/autogen.input with this github's autogen.input
 
 =========
 STEP D - Install Microsoft build environment
