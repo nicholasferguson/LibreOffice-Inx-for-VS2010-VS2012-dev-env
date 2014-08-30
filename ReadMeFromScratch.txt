@@ -240,7 +240,9 @@ Step 4 Once completed Ok.  Then run make
 
 	if process complains that it lacks a source.ver 
 	Add file under Special_config_filesToReview
-	Edit.  If you are building from core, without a version, then =master	
+	Edit using cygwin vi or vim:  If you are building from core, without a version, then edit sources.ver 
+	
+	sources_ver=master	
 
 
 
