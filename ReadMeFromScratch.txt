@@ -70,7 +70,16 @@ Special note about Excel VBA and LibreOffice Calc
 	LibreOffice Calc has a different OO Model.
 		Thus, Excel VBA is not compatible with LibreOffice Calc.
 	LibreOffice and its Calc works 100% with LibreOffice Basic and StarBasic.
-		
+	
+
+=================
+Special note about Haskell and LibreOffice Calc
+=================
+	There is a group that developed HaExcel to work with LibreOffice Calc.
+	HaExcel is Haskell code + java + LibreOffice files.
+	I have not run it.  Nor am I a Haskell developer.
+	But I found it interesting enough, to note here.
+	
 =================		
 LibreOffice-Inx-for-VS2010-VS2012-dev-env
 =================
