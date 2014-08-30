@@ -9,6 +9,15 @@ This env will first result in project files for Visual Studio 2012, having Updat
 There are instructions for generating project files for Visual Studio 2010, having Sp #1
 In Visual Studio,  when you open LibreOffice.sln, you will find 338 projects
 
+On a new machine, it should take about 4 hours to install microsoft applications and cygwin
+and do a git for libreoffice core.
+
+Note:  LibreOffice core tar file is sole tar needed at this stage.
+
+Then it takes another four to seven hours to do an initial build of LibreOffice.
+
+Length of this time was measured on a 4 core 3.7GHZ with 8GB physical memory, running 
+Windows 7 Pro (64bit)
 
 =================
 Summary:
@@ -242,11 +251,13 @@ Step 4 Once completed Ok.  Then run make
 	
 
 	>/opt/lo/bin/make
-		Make will take about four hours.
+		Make will take about four hours.		
+	
 
 	if process complains that it lacks a source.ver 
 	Add file under Special_config_filesToReview
-	Edit using cygwin vi or vim:  If you are building from core, without a version, then edit sources.ver 
+	Edit using cygwin vi or vim:  If you are building from core, without a version, 
+	then edit sources.ver 
 	
 	sources_ver=master	
 
@@ -255,16 +266,17 @@ Step 4 Once completed Ok.  Then run make
 
 Step 5:  After a 1st run of 'make'. Successful or with failure.
 
+	Check that all 3rd Party tars were downloaded
+	(at last count there were 90)
 	Review autogen.input file
-	When you run autogen.sh, it will initially downloaded tar files from LibreOffice.
 
 	Edit your autogen.input file by adding:
 
 	--disable-external-fetch
 
-	This will prevent further downloads of these tars.
+	This will prevent further downloads of 3rd Party tars.
 
-	Then redo
+	Then rerun autogen.sh
 
 	>./autogen.sh
 
@@ -272,7 +284,10 @@ Step 5:  After a 1st run of 'make'. Successful or with failure.
 
 	>/opt/lo/bin/make 
 
-
+	Important Note: ====> If 'make' cores.  Ignore.  Just re-start it.
+	No need to do >make clean
+		
+	Right now, we don't have source code for 'make' to debug.  
 
 Step 6:  How to capture make log file and view contents dynamically.
 
