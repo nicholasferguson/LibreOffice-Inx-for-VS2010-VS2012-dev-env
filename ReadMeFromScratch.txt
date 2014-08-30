@@ -158,7 +158,8 @@ STEP D - Install Microsoft build environment
 		As far as I can tell, builds are good only for Windows 7 Pro. 
 		
 	To be on a safe side, after each ISO install,  restart Windows 7 Pro.
-	and check for any updates,vis Start/Control Panel then type into <search>:  Update
+	and check for any updates.
+		via Windows 7 Desktop. Click on Start/Control Panel then type into <search>:  Update
 		Then choose 'Check for Updates'
 		Skip this Update step, when you install Visual Studios.
 	
