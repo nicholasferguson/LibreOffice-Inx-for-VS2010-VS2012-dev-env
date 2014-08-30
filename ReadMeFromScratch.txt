@@ -148,7 +148,7 @@ STEP D - Install Microsoft build environment
 
 	Install MS packages.  There is a file in MS.Installs with iso names.
 
-	For all of these packages, its recommended you first downloaded their iso files.
+	For all of these packages, it's recommended you first download their iso files.
 	Just in case, you need to reinstall.  Also downloading iso file then installing is
 	faster then installing these packages onto your machine's directories, via web.
 
