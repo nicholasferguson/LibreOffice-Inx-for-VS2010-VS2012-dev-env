@@ -5,6 +5,9 @@ I presume these instructions should apply to any LibreOffice version released as
 This is a 'begin development' set of instructions.  It's expected to work.  
 Then you can improve as you see fit.
 
+This env will first result in project files for Visual Studio 2012, having Update #4
+There are instructions for generating project files for Visual Studio 2010, having Sp #1
+
 =================
 Summary:
 =================
