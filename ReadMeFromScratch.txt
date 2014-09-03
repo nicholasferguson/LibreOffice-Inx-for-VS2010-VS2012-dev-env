@@ -68,7 +68,9 @@ Special note about Excel VBA and LibreOffice Calc
 	Per googling for literature, Excel VBA code is tighthly coupled to Excel's OO Model. 
 		Supposing that Excel VBA code interacts with Excel OO.
 	LibreOffice Calc has a different OO Model.
-		Thus, Excel VBA is not compatible with LibreOffice Calc.
+		Thus, Excel VBA is not 100% compatible with LibreOffice Calc.
+		Some experts on LibreOffice sent over an xls to run from scalc
+		look under /test.xls/hypocycloid-demo.xls
 	LibreOffice and its Calc works 100% with LibreOffice Basic and StarBasic.
 	
 
@@ -398,7 +400,19 @@ Step 9:	 Debugging In Visual Studio 2012 or 2010
 			
 		 You can start choosing your break points.
 		 
+Step 10: Run scalc.exe
+
+		+ Open /test/hypocycloid-demo.xls
+		+ Go to top menu of scalc
+		+ /Tools/Macros/Organize Macros/LibreOffice Basic...
+		+ Choose hypocycloid-demo.xls
+		+ click on VBAProject
+		+ Click on Modules
+		+ On right hand side, choose one of the functions.
+
+
 		 This is state of affairs, as I know it.
+
 		 
 		 
 		 
