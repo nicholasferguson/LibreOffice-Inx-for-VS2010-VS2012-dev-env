@@ -161,12 +161,7 @@ STEP C - become familiar with two files
 
 	VERY IMPORTANT==> Replace a downloaded cygwin64/home/lo/master/autogen.input with this github's 
 	autogen.input.
-	
-	Also copy over config_host.mk from this github's autogen.input
-	it will have
-	export ANT=C:/cygwin64/opt/apache-ant-1.9.2/bin/ant
-	export ANT_HOME=C:/cygwin64/opt/apache-ant-1.9.2
-	export ANT_LIB=C:/cygwin64/opt/apache-ant-1.9.2/lib
+
 	
 	When you run autogen.sh on Step E-3x2... autogen.sh runs configure.ac and many 
 	of the entries in config_host.mk should be updated by your env.  But I find that config_host.mk
@@ -284,6 +279,19 @@ Step 3X4.  Audit your /home/lo/master/config_host.mk
 	
 	I just went ahead and created it.  I did not research it.
 	Though at end of build... I did not find any documents in that subdirectory.
+
+	Make sure config_host.mk has these directories ( or whatever version of these software, you used )
+	export ANT=C:/cygwin64/opt/apache-ant-1.9.2/bin/ant
+	export ANT_HOME=C:/cygwin64/opt/apache-ant-1.9.2
+	export ANT_LIB=C:/cygwin64/opt/apache-ant-1.9.2/lib
+	
+	Review other directories in config_host.mk.  It uses the 8dot3name convention.
+	
+	To see those on your machine
+	>cd c:\
+	>dir /x
+	>cd c:\"Program Files (x86)"
+	>dir /x
 	
 	
 	
