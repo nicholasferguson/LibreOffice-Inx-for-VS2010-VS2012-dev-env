@@ -9,8 +9,26 @@ Then you can improve as you see fit.
 Note: LibreOffice is not friendly to Visual Studio 2010.
 	1.  LibreOffice, in a module, will use exact same file names, but in different subdirectories
 	    VS2010 will not work with that.
+
+			/source/outdev/bitmap.cpp
+			/vcl/source/gdi/bitmap.cpp
+
+	Sample Error msg(s):
+
+		1>Debug\clipping.obj : warning LNK4042: object specified more than once; extras ignored
+		1>Debug\bitmap.obj : warning LNK4042: object specified more than once; extras ignored
+		1>Debug\font.obj : warning LNK4042: object specified more than once; extras ignored
+		1>Debug\gradient.obj : warning LNK4042: object specified more than once; extras ignored
+		1>Debug\hatch.obj : warning LNK4042: object specified more than once; extras ignored
+   
         2.  LibreOffice uses a multiple depth namespace where same function signatures exist in different namespaces.
 	    VS2010 will not work with that.
+			Ex:  rtl::Reference and 
+			     com::sun::star::uno::Reference
+
+	 Sample Error msg:
+
+		toolkit\source\awt\vclxwindows.cxx(246): error C2872: com::sun::star::uno::Reference : ambiguous symbol
 
 To make LibreOffice work on VS2010, #1 and #2 above, must be addressed.
 =================
