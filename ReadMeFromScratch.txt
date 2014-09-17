@@ -5,6 +5,17 @@ I presume these instructions should apply to any LibreOffice version released as
 This is a 'begin development' set of instructions.  It's expected to work.  
 Then you can improve as you see fit.
 
+=================
+Note: LibreOffice is not friendly to Visual Studio 2010.
+	1.  LibreOffice, in a module, will use exact same file names, but in different subdirectories
+	    VS2010 will not work with that.
+        2.  LibreOffice uses a multiple depth namespace where same function signatures exist in different namespaces.
+	    VS2010 will not work with that.
+
+To make LibreOffice work on VS2010, #1 and #2 above, must be addressed.
+=================
+
+
 This env will first result in project files for Visual Studio 2012, having Update #4
 There are instructions for generating project files for Visual Studio 2010, having Sp #1
 In Visual Studio,  when you open LibreOffice.sln, you will find 338 projects
