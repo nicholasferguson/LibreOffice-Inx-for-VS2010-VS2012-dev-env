@@ -6,7 +6,18 @@ This is a 'begin development' set of instructions.  It's expected to work.
 Then you can improve as you see fit.
 
 =================
-Note: LibreOffice is not friendly to Visual Studio 2010.
+Note: 
+	After reviewing this process... Initial build issue was that anti 
+	virus was deleting files from Libreoffice build process, THis build process creates tmp files, that are then 
+	deleted by anti-virus 	and thus the build fails.Anti-Virus heuristics interprets these tmp files 
+	are potentially dangerous.
+	
+
+     LibreOffice build systems generates a vstudio project. But it presently is incomplete. 
+
+      Some key components are not available in the sln.
+      So it is not debugable... As of the version of Aug 2014.
+      
 	1.  LibreOffice, in a module, will use exact same file names, but in different subdirectories
 	    VS2010 will not work with that.
 
@@ -124,6 +135,10 @@ I also had issues with Norton AntiVirus which would quarantine files from this b
 without flagging them as a virus, but a threat...?
 
 So instead of uninstall, reinstall. I bought a new machine with O/S Windows 7 Pro, 64 bit
+
+Special Note:
+After review.  It appears I did not need a new machine.  The anti-virus was deleting files
+during a build process. So my build process was always failing.
 
 =========
 STEP A - setup cygwin64
